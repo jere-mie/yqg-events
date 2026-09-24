@@ -51,7 +51,7 @@ export async function GET(request: Request, context: Context) {
           ...headers,
           'Content-Type': 'text/html; charset=utf-8',
           'Content-Security-Policy':
-            `default-src 'none'; style-src 'unsafe-inline'; form-action 'self' ${appUrl()}; frame-ancestors 'none'; base-uri 'none'`,
+            "default-src 'none'; style-src 'unsafe-inline'; frame-ancestors 'none'; base-uri 'none'",
           'Referrer-Policy': 'no-referrer',
         },
       },
