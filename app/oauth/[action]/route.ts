@@ -69,7 +69,12 @@ export async function POST(request: Request, context: Context) {
     }
     const form = new URLSearchParams(await readBody(request, 16000));
     if (action === 'authorize') {
-      checkOrigin(request);
+      // ChatGPT posts the consent form from its own origin. Keep the normal
+      // same-origin protection while allowing the OAuth client origins that
+      // are explicitly registered for this flow.
+      const origin = request.headers.get('origin');
+      if (origin && origin !== appUrl() && origin !== 'https://chatgpt.com')
+        throw new AppError(403, 'Origin not allowed');
       await rateLimit('owner-login', 20, 900);
       const jar = await cookies();
       const value = await readConsent(
