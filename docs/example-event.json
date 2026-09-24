@@ -1,0 +1,14 @@
+{
+  "title": "Example community gathering (fictional draft)",
+  "description": "A fictional example for testing the ingestion API. Do not publish.",
+  "contentMarkdown": "## Test listing\n\nThis is not a real event. Replace all facts with verified source information before publication.",
+  "startDateTime": "2027-06-12T11:00:00-04:00",
+  "endDateTime": "2027-06-12T15:00:00-04:00",
+  "city": "Windsor",
+  "categories": ["Community"],
+  "tags": ["test"],
+  "isFree": null,
+  "isFamilyFriendly": null,
+  "sourceUrl": "https://example.com/fictional-test-event",
+  "status": "draft"
+}
